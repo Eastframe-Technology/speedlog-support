@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpeedLog support</title>
+<meta name="description" content="Support and privacy policy for SpeedLog, the GPS speedometer and trip log that you pay for once.">
+<style>
+  :root { color-scheme: light dark; --bg:#f7f8fa; --fg:#0b0f14; --muted:#5b6672; --accent:#13a89a; --card:#ffffff; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0b0f14; --fg:#eceff3; --muted:#9aa6b2; --accent:#2dd4bf; --card:#141a21; } }
+  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  main { max-width:680px; margin:0 auto; padding:48px 16px 64px; }
+  h1 { font-size:34px; margin:0 0 4px; } h2 { margin-top:40px; font-size:22px; }
+  p.lead { color:var(--muted); margin-top:0; }
+  .card { background:var(--card); border-radius:14px; padding:16px 20px; margin:16px 0; }
+  a { color:var(--accent); }
+  .logo { width:72px; height:72px; border-radius:18px; display:block; margin-bottom:16px; }
+  footer { color:var(--muted); font-size:14px; margin-top:48px; }
+</style>
+</head>
+<body>
+<main>
+  <img class="logo" src="icon.png" alt="">
+  <h1>SpeedLog</h1>
+  <p class="lead">GPS speedometer and trip log. Paid once. No ads, no subscription, no account.</p>
+
+  <h2 id="support">Support</h2>
+  <div class="card">
+    <p>Questions, bugs, or feature requests: email <a href="mailto:support@eastframe.tech">support@eastframe.tech</a>. A human reads every message, usually the same day.</p>
+    <p>Before writing about a speed reading of 0: SpeedLog needs a GPS fix, which indoors can take a minute. The chip under the title shows the current accuracy.</p>
+  </div>
+
+  <h2>Frequently asked</h2>
+  <div class="card">
+    <p><strong>Does recording keep working with the screen off?</strong> Yes. Start a trip, lock the phone, and the trip keeps recording using the standard "while using" permission. iOS shows the blue location indicator, Android shows a notification, and both go away when you stop the trip.</p>
+    <p><strong>Why does it ask for location only "while using"?</strong> Because that is all it needs. SpeedLog never asks for "always" access.</p>
+    <p><strong>How do I get my trips out?</strong> Open a trip and use the share button to export GPX or CSV.</p>
+    <p><strong>Is there a subscription?</strong> No. You paid once and that is it.</p>
+  </div>
+
+  <h2 id="privacy">Privacy policy</h2>
+  <div class="card">
+    <p><em>Effective 1 November 2026.</em> SpeedLog is published by Eastframe Technology LLC.</p>
+    <p><strong>What the app collects: nothing.</strong> SpeedLog has no account system, no analytics, no advertising, and no crash reporting service. It sends no data to us or to anyone else.</p>
+    <p><strong>Location.</strong> The app reads your device's location to show your speed, heading and altitude, and to record trips you start. Location is read only while the app is open, or while a trip you started is recording with the screen off. The app asks for "while using the app" permission and never asks for "always" access. Location is processed on your device and stored there only as part of a recorded trip.</p>
+    <p><strong>Trips.</strong> Recorded trips are stored in a local database on your device until you delete them or uninstall the app. If you export a trip as GPX or CSV, the file goes to the app or service you choose in the share sheet.</p>
+    <p><strong>Settings</strong> such as units and theme are stored locally on the device.</p>
+    <p><strong>Third parties.</strong> The app contains no third-party advertising or analytics code. The only external links are this page and the store's own review and listing pages, opened at your request.</p>
+    <p><strong>Children.</strong> SpeedLog is not directed at children and collects no personal information from anyone.</p>
+    <p><strong>Changes.</strong> A new version of this policy will be published at this address with a new effective date.</p>
+  </div>
+
+  <footer>© 2026 Eastframe Technology LLC</footer>
+</main>
+</body>
+</html>
