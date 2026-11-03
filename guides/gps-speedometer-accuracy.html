@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How accurate is a GPS speedometer? GPS vs car speedometer</title>
+<meta name="description" content="GPS speed on a phone is usually within 1 km/h of true speed. Why your car speedometer reads higher, when GPS is less reliable, and how to check your own car.">
+<link rel="canonical" href="https://eastframe-technology.github.io/speedlog-support/guides/gps-speedometer-accuracy.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How accurate is a GPS speedometer?">
+<meta property="og:description" content="GPS speed on a phone is usually within 1 km/h of true speed. Why your car speedometer reads higher, when GPS is less reliable, and how to check your own car.">
+<meta property="og:image" content="https://eastframe-technology.github.io/speedlog-support/img/og.jpg">
+<link rel="icon" href="../icon.png">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"How accurate is a GPS speedometer?","description":"GPS speed on a phone is usually within 1 km/h of true speed. Why your car speedometer reads higher, when GPS is less reliable, and how to check your own car.","datePublished":"2026-11-03","author":{"@type":"Organization","name":"Eastframe Technology LLC"},"publisher":{"@type":"Organization","name":"Eastframe Technology LLC"},"image":"https://eastframe-technology.github.io/speedlog-support/img/og.jpg"}
+</script>
+</head>
+<body>
+<main>
+  <nav><a class="home" href="../"><img src="../icon.png" alt="">SpeedLog</a><a href="gps-speedometer-accuracy.html">Accuracy</a><a href="phone-hud-speedometer.html">HUD</a><a href="export-trip-gpx-csv.html">Export</a><a href="../#support">Support</a></nav>
+  <h1>How accurate is a GPS speedometer?</h1>
+  <p class="lead">Short answer: with a clear view of the sky, a phone's GPS speed is usually within about 1 km/h (under 1 mph) of your true speed. Your car's speedometer is often the one that is off, and it is built to read high.</p>
+
+  <h2>How a phone measures speed</h2>
+  <p>A GPS receiver does not just compare two positions and divide by time. It measures the Doppler shift of the satellite signals, the tiny change in frequency caused by your movement, and computes speed from that directly. That is why GPS speed stays steady even when the position itself wanders by a few metres.</p>
+  <p>Phones report a new reading about once per second. SpeedLog smooths those readings so the number does not jump around, and shows 0 when you are standing still instead of a stray 2 or 3.</p>
+
+  <h2>Why your car shows a higher number</h2>
+  <p>Car speedometers are allowed to over-read, never to under-read. In Europe and many other countries, UN Regulation No. 39 requires that the indicated speed is never below the true speed, and lets it be higher by up to 10% plus 4 km/h. Manufacturers usually set them a few percent high to stay on the safe side.</p>
+  <p>Tyres change the picture too. A car speedometer counts wheel turns, so worn tyres, a different tyre size or low pressure all change what it shows. GPS does not care about any of that.</p>
+  <table>
+    <tr><th>True speed</th><th>Typical dashboard reading</th><th>Largest over-read allowed (UN R39)</th></tr>
+    <tr><td>50 km/h</td><td>52 to 54 km/h</td><td>59 km/h</td></tr>
+    <tr><td>100 km/h</td><td>103 to 106 km/h</td><td>114 km/h</td></tr>
+    <tr><td>60 mph</td><td>62 to 64 mph</td><td>68.5 mph</td></tr>
+  </table>
+  <p class="note">The middle column is a common range, not a rule; your car may differ. Compare yours on a straight, level road at a steady speed.</p>
+
+  <h2>When GPS speed is less reliable</h2>
+  <ul>
+    <li><strong>Tunnels and underground car parks:</strong> no satellites, no speed. SpeedLog keeps the last trip data and resumes when the signal returns.</li>
+    <li><strong>Tall buildings and narrow streets:</strong> signals bounce off walls, which adds noise. Readings are still usable but jumpier.</li>
+    <li><strong>The first minute after opening:</strong> the receiver needs time to lock on. SpeedLog shows the current accuracy (for example ±6 m) under the title; wait until it is small.</li>
+    <li><strong>Very low speeds:</strong> walking pace is the hardest case because the movement is close to the noise. Averages over a trip are still accurate.</li>
+    <li><strong>Inside a car with a metallised windshield:</strong> some heat-reflecting windshields weaken GPS. If accuracy stays poor, try the phone lower on the dashboard or near a side window.</li>
+  </ul>
+
+  <h2>How to check your own car</h2>
+  <ol>
+    <li>Open SpeedLog and wait until the accuracy chip shows a small number.</li>
+    <li>Drive on a straight, level road and hold a steady speed with cruise control if you have it.</li>
+    <li>Have a passenger compare the two readings at a few speeds, for example 50, 80 and 110 km/h.</li>
+  </ol>
+  <p>The gap usually grows with speed. Most people find their car reads 2 to 6 percent high.</p>
+
+  <h2>Distance works the same way</h2>
+  <p>SpeedLog adds up distance from the GPS track, so it is not affected by tyre size either. Over a long trip it usually lands within one or two percent of the true distance; trips through tunnels or dense cities come out slightly short because the receiver cannot see the part it missed.</p>
+
+  <div class="card"><strong>SpeedLog</strong> is a GPS speedometer and trip log for Android with no ads and no subscription. <a href="https://play.google.com/store/apps/details?id=com.eastframe.speedlog">Get it on Google Play</a>.</div>
+  <footer>© 2026 Eastframe Technology LLC · <a href="../privacy.html">Privacy policy</a></footer>
+</main>
+</body>
+</html>

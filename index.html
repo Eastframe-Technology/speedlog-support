@@ -3,26 +3,57 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SpeedLog support</title>
-<meta name="description" content="Support and privacy policy for SpeedLog, the GPS speedometer and trip log.">
-<style>
-  :root { color-scheme: light dark; --bg:#f7f8fa; --fg:#0b0f14; --muted:#5b6672; --accent:#13a89a; --card:#ffffff; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#0b0f14; --fg:#eceff3; --muted:#9aa6b2; --accent:#2dd4bf; --card:#141a21; } }
-  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-  main { max-width:680px; margin:0 auto; padding:48px 16px 64px; }
-  h1 { font-size:34px; margin:0 0 4px; } h2 { margin-top:40px; font-size:22px; }
-  p.lead { color:var(--muted); margin-top:0; }
-  .card { background:var(--card); border-radius:14px; padding:16px 20px; margin:16px 0; }
-  a { color:var(--accent); }
-  .logo { width:72px; height:72px; border-radius:18px; display:block; margin-bottom:16px; }
-  footer { color:var(--muted); font-size:14px; margin-top:48px; }
-</style>
+<title>SpeedLog: GPS speedometer and trip log for Android, no ads</title>
+<meta name="description" content="SpeedLog is a GPS speedometer and odometer for Android with a trip log, HUD mirror and GPX export. No ads, no subscription, no account. Free, with one optional unlock.">
+<link rel="canonical" href="https://eastframe-technology.github.io/speedlog-support/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SpeedLog: GPS speedometer and trip log, no ads">
+<meta property="og:description" content="Speed in km/h, mph or knots, every trip saved with route and speed profile, HUD mirror for night driving. No ads, no subscription.">
+<meta property="og:image" content="https://eastframe-technology.github.io/speedlog-support/img/og.jpg">
+<meta property="og:url" content="https://eastframe-technology.github.io/speedlog-support/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","name":"SpeedLog: GPS Speedometer","operatingSystem":"Android","applicationCategory":"TravelApplication","description":"GPS speedometer and odometer with trip log, HUD mirror and GPX/CSV export. No ads, no subscription, no account.","downloadUrl":"https://play.google.com/store/apps/details?id=com.eastframe.speedlog","installUrl":"https://play.google.com/store/apps/details?id=com.eastframe.speedlog","image":"https://eastframe-technology.github.io/speedlog-support/img/og.jpg","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Eastframe Technology LLC"}}
+</script>
 </head>
 <body>
 <main>
-  <img class="logo" src="icon.png" alt="">
-  <h1>SpeedLog</h1>
-  <p class="lead">GPS speedometer and trip log. Free, with one optional unlock. No ads, no subscription, no account.</p>
+  <nav><a class="home" href="./"><img src="icon.png" alt="">SpeedLog</a><a href="guides/gps-speedometer-accuracy.html">Accuracy</a><a href="guides/phone-hud-speedometer.html">HUD</a><a href="guides/export-trip-gpx-csv.html">Export</a><a href="#support">Support</a></nav>
+
+  <h1>A GPS speedometer with no ads and no subscription</h1>
+  <p class="lead">SpeedLog shows your speed in km/h, mph or knots and records every trip: distance, moving time, max and average speed, route and speed profile. It works offline, needs no account and sends nothing anywhere.</p>
+  <a class="cta" href="https://play.google.com/store/apps/details?id=com.eastframe.speedlog"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 2.8v18.4c0 .6.6.9 1.1.6l15.4-9.2c.5-.3.5-.9 0-1.2L5.1 2.2C4.6 1.9 4 2.2 4 2.8z"/></svg>Get it on Google Play</a>
+  <p class="note">Android. Free: speedometer, HUD mirror and three saved trips. SpeedLog Pro, one in-app purchase paid once: unlimited trips, GPX and CSV export, speed alert.</p>
+
+  <div class="shots" aria-label="Screenshots">
+    <img src="img/shot-1.webp" width="200" height="444" alt="Speedometer showing 32 mph with heading and altitude">
+    <img src="img/shot-2.webp" width="200" height="444" alt="Trip recording with distance, time, max and average speed" loading="lazy">
+    <img src="img/shot-3.webp" width="200" height="444" alt="List of saved trips with totals" loading="lazy">
+    <img src="img/shot-4.webp" width="200" height="444" alt="Trip detail with route and speed profile" loading="lazy">
+    <img src="img/shot-5.webp" width="200" height="444" alt="Mirrored HUD display for the windshield" loading="lazy">
+    <img src="img/shot-6.webp" width="200" height="444" alt="Settings with the speed alert turned off" loading="lazy">
+  </div>
+
+  <h2>What it does</h2>
+  <div class="grid">
+    <div class="card"><h3>Speedometer</h3>Large digits in km/h, mph or knots. Smoothed GPS speed that reads 0 when you stop. Heading, altitude and GPS accuracy under the dial.</div>
+    <div class="card"><h3>Trip log and odometer</h3>One button to start, pause and stop. Distance, moving time, max and average speed, saved on your phone with the route and a speed graph.</div>
+    <div class="card"><h3>HUD mirror</h3>A mirrored display that reflects in the windshield at night. <a href="guides/phone-hud-speedometer.html">How to set it up</a>.</div>
+    <div class="card"><h3>GPX and CSV export</h3>Every point with time, position, altitude and speed, ready for maps, spreadsheets or training apps. <a href="guides/export-trip-gpx-csv.html">Details</a>.</div>
+  </div>
+
+  <h2>Where people use it</h2>
+  <ul>
+    <li><strong>In the car</strong>, as a second speedometer, or to check how far the dashboard one reads high. <a href="guides/gps-speedometer-accuracy.html">Why they differ</a>.</li>
+    <li><strong>On a bike, e-bike, scooter or motorbike</strong>, as a speed tracker and trip meter.</li>
+    <li><strong>Walking, running and hiking</strong>, for distance, time and average speed.</li>
+    <li><strong>On a boat</strong>, with speed in knots.</li>
+  </ul>
+
+  <h2>Why no ads?</h2>
+  <p>Most speedometer apps are free to install, then ask for a weekly subscription or show full-screen ads while you drive. SpeedLog is free to use, with one small unlock for people who want more. There is no advertising code, no analytics and no account, so there is nothing to sell.</p>
 
   <h2 id="support">Support</h2>
   <div class="card">
@@ -32,8 +63,9 @@
 
   <h2>Frequently asked</h2>
   <div class="card">
-    <p><strong>Does recording keep working with the screen off?</strong> Yes. Start a trip, lock the phone, and the trip keeps recording using the standard "while using" permission. iOS shows the blue location indicator, Android shows a notification, and both go away when you stop the trip.</p>
+    <p><strong>Does recording keep working with the screen off?</strong> Yes. Start a trip, lock the phone, and the trip keeps recording using the standard "while using" permission. Android shows a notification, which goes away when you stop the trip.</p>
     <p><strong>Why does it ask for location only "while using"?</strong> Because that is all it needs. SpeedLog never asks for "always" access.</p>
+    <p><strong>Does it work without mobile data?</strong> Yes. GPS works without a data connection, and SpeedLog draws routes without map tiles, so it works the same in airplane mode with location on.</p>
     <p><strong>How do I get my trips out?</strong> Open a trip and use the share button to export GPX or CSV.</p>
     <p><strong>Is there a subscription?</strong> No. SpeedLog is free; SpeedLog Pro is a single purchase. Restore it on a new phone from Settings.</p>
   </div>
@@ -50,7 +82,7 @@
     <p><strong>Changes.</strong> A new version of this policy will be published at this address with a new effective date.</p>
   </div>
 
-  <footer>© 2026 Eastframe Technology LLC</footer>
+  <footer>© 2026 Eastframe Technology LLC · <a href="privacy.html">Privacy policy</a></footer>
 </main>
 </body>
 </html>

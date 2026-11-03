@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Export a drive or ride as GPX or CSV from SpeedLog</title>
+<meta name="description" content="How to export a trip from SpeedLog as GPX or CSV, what each file contains, how to convert speed units in a spreadsheet, and which apps open GPX tracks.">
+<link rel="canonical" href="https://eastframe-technology.github.io/speedlog-support/guides/export-trip-gpx-csv.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Export a trip as GPX or CSV">
+<meta property="og:description" content="How to export a trip from SpeedLog as GPX or CSV, what each file contains, how to convert speed units in a spreadsheet, and which apps open GPX tracks.">
+<meta property="og:image" content="https://eastframe-technology.github.io/speedlog-support/img/og.jpg">
+<link rel="icon" href="../icon.png">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Export a trip as GPX or CSV","description":"How to export a trip from SpeedLog as GPX or CSV, what each file contains, how to convert speed units in a spreadsheet, and which apps open GPX tracks.","datePublished":"2026-11-03","author":{"@type":"Organization","name":"Eastframe Technology LLC"},"publisher":{"@type":"Organization","name":"Eastframe Technology LLC"},"image":"https://eastframe-technology.github.io/speedlog-support/img/og.jpg"}
+</script>
+</head>
+<body>
+<main>
+  <nav><a class="home" href="../"><img src="../icon.png" alt="">SpeedLog</a><a href="gps-speedometer-accuracy.html">Accuracy</a><a href="phone-hud-speedometer.html">HUD</a><a href="export-trip-gpx-csv.html">Export</a><a href="../#support">Support</a></nav>
+  <h1>Export a trip as GPX or CSV</h1>
+  <p class="lead">Every trip SpeedLog records can be exported as a GPX file for maps and training apps, or as a CSV file for spreadsheets. Export is part of SpeedLog Pro.</p>
+
+  <h2>How to export</h2>
+  <ol>
+    <li>Open the <strong>Trips</strong> tab and tap the trip you want.</li>
+    <li>Tap the share button at the top right.</li>
+    <li>Choose <strong>GPX</strong> or <strong>CSV</strong>, then pick where to send it: Files, Drive, email, or another app.</li>
+  </ol>
+
+  <h2>What is in a GPX file</h2>
+  <p>GPX is the standard file format for GPS tracks. SpeedLog writes one track point per GPS reading, about one per second, each with:</p>
+  <ul>
+    <li>latitude and longitude, to six decimal places (about 10 cm)</li>
+    <li>elevation in metres, when the phone provides it</li>
+    <li>the time, in UTC</li>
+    <li>the speed in metres per second, in a <code>&lt;speed&gt;</code> extension</li>
+  </ul>
+  <p>Apps and sites that open GPX files include Google Earth, OsmAnd, gpx.studio and Strava (upload it as an activity from the website). Your route then shows up on a real map.</p>
+
+  <h2>What is in a CSV file</h2>
+  <p>The CSV file has one row per point and these columns:</p>
+  <table>
+    <tr><th>Column</th><th>Meaning</th></tr>
+    <tr><td><code>time</code></td><td>UTC time in ISO 8601, for example 2026-11-03T15:36:12Z</td></tr>
+    <tr><td><code>lat</code>, <code>lon</code></td><td>position in degrees</td></tr>
+    <tr><td><code>alt_m</code></td><td>altitude in metres, empty when unknown</td></tr>
+    <tr><td><code>speed_mps</code></td><td>speed in metres per second</td></tr>
+  </table>
+  <p>To convert speed in a spreadsheet: multiply <code>speed_mps</code> by <strong>3.6</strong> for km/h, by <strong>2.237</strong> for mph, or by <strong>1.944</strong> for knots.</p>
+
+  <h2>Ideas</h2>
+  <ul>
+    <li>Keep a mileage log for work trips: export each trip as CSV and paste the totals into your expense sheet.</li>
+    <li>Compare two runs of the same commute and see where the time goes.</li>
+    <li>Upload a bike ride to a training app that accepts GPX.</li>
+    <li>Back up trips before changing phones; your data never leaves the phone unless you export it.</li>
+  </ul>
+
+  <div class="card"><strong>SpeedLog</strong> is a GPS speedometer and trip log for Android with no ads and no subscription. <a href="https://play.google.com/store/apps/details?id=com.eastframe.speedlog">Get it on Google Play</a>.</div>
+  <footer>© 2026 Eastframe Technology LLC · <a href="../privacy.html">Privacy policy</a></footer>
+</main>
+</body>
+</html>
