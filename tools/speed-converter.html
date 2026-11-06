@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Speed converter: km/h, mph, knots and m/s, plus dashboard vs GPS check</title>
+<meta name="description" content="Convert km/h, mph, knots and m/s, and compare your dashboard speedometer with GPS. Shows the gap in percent and the UN R39 limit. Free, runs in your browser.">
+<link rel="canonical" href="https://eastframe-technology.github.io/speedlog-support/tools/speed-converter.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Speed converter and speedometer difference calculator">
+<meta property="og:description" content="Convert km/h, mph, knots and m/s, and compare your dashboard speedometer with GPS. Shows the gap in percent and the UN R39 limit. Free, runs in your browser.">
+<meta property="og:image" content="https://eastframe-technology.github.io/speedlog-support/img/og.jpg">
+<meta property="og:url" content="https://eastframe-technology.github.io/speedlog-support/tools/speed-converter.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../icon.png">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I convert km/h to mph?","acceptedAnswer":{"@type":"Answer","text":"Divide by 1.609344, or multiply by about 0.621371. So 100 km/h is about 62.14 mph."}},{"@type":"Question","name":"How fast is a knot?","acceptedAnswer":{"@type":"Answer","text":"One knot is one nautical mile per hour, exactly 1.852 km/h, or about 1.151 mph."}},{"@type":"Question","name":"Why does my speedometer read higher than GPS?","acceptedAnswer":{"@type":"Answer","text":"Car speedometers are allowed to over-read and not to under-read. Under UN Regulation No. 39 the shown speed may be up to 10% plus 4 km/h above true speed. Makers usually set them a few percent high to stay on the safe side."}},{"@type":"Question","name":"Which is right, GPS or the dashboard?","acceptedAnswer":{"@type":"Answer","text":"With a good fix and a steady speed, GPS is usually within about 1 km/h of true speed. A dashboard counts wheel turns, so tyre size and wear change what it shows. In tunnels or at very low speeds, GPS is less reliable."}},{"@type":"Question","name":"Does R39 apply to my car?","acceptedAnswer":{"@type":"Answer","text":"It applies in Europe and many other countries that use UN vehicle regulations, for vehicles as approved when new. Other rules apply elsewhere, and a change of tyres can move the reading after that. The result here is a guide, not a legal or roadworthiness test."}},{"@type":"Question","name":"Does this page send my numbers anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The calculation runs in your browser and nothing you type leaves it."}}]}
+</script>
+</head>
+<body>
+<main>
+  <nav><a class="home" href="../"><img src="../icon.png" alt="">SpeedLog</a><a href="../tools/speed-converter.html">Converter</a><a href="../guides/gps-speedometer-accuracy.html">Accuracy</a><a href="../guides/phone-hud-speedometer.html">HUD</a><a href="../guides/export-trip-gpx-csv.html">Export</a><a href="../#support">Support</a></nav>
+  <h1>Speed converter and speedometer difference calculator</h1>
+  <p class="lead">Type a speed in any box and the others update. Below that, compare your dashboard with GPS to see how far it reads high.</p>
+
+  <section class="tool" aria-label="Speed converter">
+    <h2>Convert a speed</h2>
+    <div class="fields">
+      <label>km/h<input id="kmh" type="text" inputmode="decimal" autocomplete="off" value="100"></label>
+      <label>mph<input id="mph" type="text" inputmode="decimal" autocomplete="off" value="62.14"></label>
+      <label>knots<input id="kn" type="text" inputmode="decimal" autocomplete="off" value="54"></label>
+      <label>m/s<input id="ms" type="text" inputmode="decimal" autocomplete="off" value="27.78"></label>
+    </div>
+  </section>
+
+  <section class="tool" aria-label="Dashboard versus GPS speedometer">
+    <h2>Dashboard versus GPS</h2>
+    <p class="note">Read both at a steady speed on a straight, level road. Have a passenger do it, not the driver.</p>
+    <div class="fields">
+      <label>Dashboard shows<input id="dash" type="text" inputmode="decimal" autocomplete="off" placeholder="110"></label>
+      <label>GPS shows<input id="gps" type="text" inputmode="decimal" autocomplete="off" placeholder="105"></label>
+      <label>Unit<select id="dunit"><option value="kmh">km/h</option><option value="mph">mph</option><option value="kn">knots</option><option value="ms">m/s</option></select></label>
+    </div>
+    <div class="result" id="result" hidden>
+      <dl class="stats">
+        <div><dt>Difference</dt><dd id="rdiff"></dd></div>
+        <div><dt>Percent of GPS speed</dt><dd id="rpct"></dd></div>
+        <div><dt>Highest reading R39 allows here</dt><dd id="rmax"></dd></div>
+      </dl>
+      <p id="rtext"></p>
+      <p class="note" id="rfactor"></p>
+    </div>
+  </section>
+  <p class="note">Everything runs in your browser. Nothing you type leaves this page.</p>
+
+  <div class="card">Need the GPS number? <strong>SpeedLog</strong> is a GPS speedometer for Android with no ads and no subscription. <a href="https://play.google.com/store/apps/details?id=com.eastframe.speedlog">Get it on Google Play</a>.</div>
+
+  <h2>The formulas</h2>
+  <p>Each unit is a fixed number of metres per second, so a conversion goes through m/s:</p>
+  <div class="tablewrap"><table>
+    <tr><th>Unit</th><th>Exact definition</th><th>In m/s</th></tr>
+    <tr><td>km/h</td><td>1000 m per hour</td><td>0.27778</td></tr>
+    <tr><td>mph</td><td>1609.344 m per hour</td><td>0.44704</td></tr>
+    <tr><td>knot</td><td>1852 m per hour</td><td>0.51444</td></tr>
+  </table></div>
+  <p>For the dashboard check, the difference is dashboard minus GPS, and the percent is that difference divided by the GPS speed.</p>
+  <p>UN Regulation No. 39 sets the allowed range. With V1 the shown speed and V2 the true speed, both in km/h:</p>
+  <p><code>0 ≤ V1 − V2 ≤ 0.1 × V2 + 4</code></p>
+  <p>The speedometer may never show less than true speed. It may show more, by up to 10% plus 4 km/h. The 4 is in km/h in every case, which is about 2.49 mph, and the calculator converts it for you.</p>
+
+  <h2>Worked examples</h2>
+  <p><strong>In km/h.</strong> The dashboard shows 110 and GPS shows 105. The difference is 5 km/h, and 5 / 105 is 4.8%. The highest reading R39 allows at a true 105 km/h is 1.1 × 105 + 4 = 119.5 km/h, so 110 is inside the range. To estimate true speed near this speed, multiply the dashboard by 105 / 110, or 0.955.</p>
+  <p><strong>In mph.</strong> The dashboard shows 70 and GPS shows 67. The difference is 3 mph, which is 4.5%. A true 67 mph is 107.8 km/h, and 1.1 × 107.8 + 4 = 122.6 km/h, or 76.2 mph. Using a plain 4 mph here would give 77.7 mph, which is wrong.</p>
+
+  <h2>Limits</h2>
+  <ul>
+    <li><strong>GPS is not perfect.</strong> It is usually within about 1 km/h with a good fix, so the calculator treats smaller gaps as a match. <a href="../guides/gps-speedometer-accuracy.html">When GPS speed is less reliable</a>.</li>
+    <li><strong>One reading isn't the whole picture.</strong> The gap usually grows with speed, so the multiply-by number only holds near the speed you tested. Check a few speeds.</li>
+    <li><strong>It doesn't judge your car.</strong> R39 covers type approval of vehicles as built. Tyres change the reading later on, and this page can't tell you whether a vehicle complies with any law.</li>
+    <li><strong>Always follow the speed limit</strong> and watch the road. Don't read a phone while driving.</li>
+  </ul>
+
+  <h2>Common speeds</h2>
+  <p class="note">Rounded to one decimal.</p>
+  <div class="tablewrap"><table><tr><th>km/h</th><th>mph</th><th>knots</th><th>m/s</th></tr><tr><td>10 km/h</td><td>6.2 mph</td><td>5.4 kn</td><td>2.8 m/s</td></tr><tr><td>20 km/h</td><td>12.4 mph</td><td>10.8 kn</td><td>5.6 m/s</td></tr><tr><td>30 km/h</td><td>18.6 mph</td><td>16.2 kn</td><td>8.3 m/s</td></tr><tr><td>50 km/h</td><td>31.1 mph</td><td>27.0 kn</td><td>13.9 m/s</td></tr><tr><td>60 km/h</td><td>37.3 mph</td><td>32.4 kn</td><td>16.7 m/s</td></tr><tr><td>80 km/h</td><td>49.7 mph</td><td>43.2 kn</td><td>22.2 m/s</td></tr><tr><td>100 km/h</td><td>62.1 mph</td><td>54.0 kn</td><td>27.8 m/s</td></tr><tr><td>110 km/h</td><td>68.4 mph</td><td>59.4 kn</td><td>30.6 m/s</td></tr><tr><td>120 km/h</td><td>74.6 mph</td><td>64.8 kn</td><td>33.3 m/s</td></tr><tr><td>130 km/h</td><td>80.8 mph</td><td>70.2 kn</td><td>36.1 m/s</td></tr></table></div>
+  <div class="tablewrap"><table><tr><th>mph</th><th>km/h</th><th>knots</th><th>m/s</th></tr><tr><td>20 mph</td><td>32.2 km/h</td><td>17.4 kn</td><td>8.9 m/s</td></tr><tr><td>30 mph</td><td>48.3 km/h</td><td>26.1 kn</td><td>13.4 m/s</td></tr><tr><td>40 mph</td><td>64.4 km/h</td><td>34.8 kn</td><td>17.9 m/s</td></tr><tr><td>50 mph</td><td>80.5 km/h</td><td>43.4 kn</td><td>22.4 m/s</td></tr><tr><td>60 mph</td><td>96.6 km/h</td><td>52.1 kn</td><td>26.8 m/s</td></tr><tr><td>70 mph</td><td>112.7 km/h</td><td>60.8 kn</td><td>31.3 m/s</td></tr><tr><td>80 mph</td><td>128.7 km/h</td><td>69.5 kn</td><td>35.8 m/s</td></tr></table></div>
+
+  <h2>Frequently asked</h2>
+  <div class="card faq">
+    <p><strong>How do I convert km/h to mph?</strong> Divide by 1.609344, or multiply by about 0.621371. So 100 km/h is about 62.14 mph.</p>
+    <p><strong>How fast is a knot?</strong> One knot is one nautical mile per hour, exactly 1.852 km/h, or about 1.151 mph.</p>
+    <p><strong>Why does my speedometer read higher than GPS?</strong> Car speedometers are allowed to over-read and not to under-read. Under UN Regulation No. 39 the shown speed may be up to 10% plus 4 km/h above true speed. Makers usually set them a few percent high to stay on the safe side.</p>
+    <p><strong>Which is right, GPS or the dashboard?</strong> With a good fix and a steady speed, GPS is usually within about 1 km/h of true speed. A dashboard counts wheel turns, so tyre size and wear change what it shows. In tunnels or at very low speeds, GPS is less reliable.</p>
+    <p><strong>Does R39 apply to my car?</strong> It applies in Europe and many other countries that use UN vehicle regulations, for vehicles as approved when new. Other rules apply elsewhere, and a change of tyres can move the reading after that. The result here is a guide, not a legal or roadworthiness test.</p>
+    <p><strong>Does this page send my numbers anywhere?</strong> No. The calculation runs in your browser and nothing you type leaves it.</p>
+  </div>
+
+  <footer>© 2026 Eastframe Technology LLC · <a href="../privacy.html">Privacy policy</a></footer>
+</main>
+<script src="speed-converter.js"></script>
+<script src="speed-converter-ui.js"></script>
+</body>
+</html>
